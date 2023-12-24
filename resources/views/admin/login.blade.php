@@ -11,6 +11,12 @@
 		<!-- Theme style -->
 		<link rel="stylesheet" href="{{asset('admin-assets/css/adminlte.min.css')}}">
 		<link rel="stylesheet" href="{{asset('admin-assets/css/custom.css')}}">
+		<style>
+			body{
+				background-repeat: no-repeat;
+				background-image: url({{asset('admin-assets/img/background/bg.jpg')}});
+			}
+		</style>
 	</head>
 	<body class="hold-transition login-page">
 		<div class="login-box">

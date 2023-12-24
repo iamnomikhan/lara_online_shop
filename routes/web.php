@@ -16,7 +16,7 @@ use App\Http\Controllers\admin\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.login');
 });
 
 Route::group(['prefix' => 'admin'],function(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -24,6 +25,8 @@ class Admin_controller extends Controller
             'password'=> $request->password],$request->get('remember'))){
                 $admin = Auth::guard('admin')->user();
                 if($admin->role == 2){
+                    unset($admin->password);
+                    session(['user_data' => $admin]);
                     return redirect()->route('admin.dashboard');
                 }else{
                     Auth::guard('admin')->logout();

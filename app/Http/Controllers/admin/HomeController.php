@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,9 @@ class HomeController extends Controller
     }
 
     public function logout(){
+        $request->session()->flush();
         Auth::guard('admin')->logout();
+        $request->session()->regenerate();
         return redirect()->route('admin.login');
     }
 }

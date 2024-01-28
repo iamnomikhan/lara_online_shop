@@ -83,6 +83,7 @@
 		<!-- AdminLTE App -->
 		<script src="{{asset('admin-assets/js/adminlte.min.js')}}"></script>
 	    <script src="{{asset('admin-assets/js/demo.js')}}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         @yield('customJs')
 	</body>
 </html>
